@@ -1,40 +1,25 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from './componentes/Footer';
+import Header from './componentes/Header';
 
-import Header from "./componentes/Header";
-import Main from "./componentes/Main";
-import Footer from "./componentes/Footer";
-
-import Erro from './componentes/Erro';
-import Equipe from './componentes/Equipe';
-import DisciplinasCurriculares from './componentes/DisciplinasCurriculares';
-import DisciplinasTecnicas from "./componentes/DisciplinasTecnicas";
-import ListarDisciplinaCurricular from './componentes/ListarDisciplinaCurricular';
-import ListarDisciplinaTecnica from './componentes/ListarDisplinasTecnica';
-import SobreCurso from "./componentes/SobreCurso";
+import Home from './paginas/Home';
+import Contato from './paginas/Contato';
+import Sobre from './paginas/Sobre';
 
 function App() {
   return (
     <BrowserRouter>
-      <>
-        <Header />
+      <Header />
+      <main>
         <Routes>
-        <Route path="*" element={<Erro/>}/>
-        <Route path="/" element={<Main/>}/>
-        <Route path="/sobreCurso" element = {<SobreCurso/>}/>
-        <Route path="/disciplinasTecnicas" element = {<DisciplinasTecnicas/>}/>
-        <Route path="/disciplinasCurriculares" element = {<DisciplinasCurriculares/>}/>
-
-<Route path="/disciplinaTecnica/:id" element = {<ListarDisciplinaTecnica   />}/>
-<Route path="/disciplinaCurricular/:id" element = {<ListarDisciplinaCurricular/>}/>
-
-        <Route path="/equipe" element = {<Equipe/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/contato" element={<Contato />} />
+          <Route path="/sobre" element={<Sobre />} />
         </Routes>
-        <Footer />
-      </>
+      </main>
+      <Footer />
     </BrowserRouter>
-
-
   );
 }
 
